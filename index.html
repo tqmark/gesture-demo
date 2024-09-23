@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture-Based Password Unlock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #webcam,
+        #output_canvas {
+            display: block;
+            margin: auto;
+            position: absolute;
+        }
+
+        #gesture_output,
+        #webcamButton,
+        #protectedContent,
+        #unlockedImage {
+            margin-top: 20px;
+        }
+
+        #protectedContent,
+        #unlockedImage {
+            display: none;
+        }
+
+        #videoContainer {
+            width: 640px;
+            height: 480px;
+            margin: auto;
+            position: relative;
+        }
+
+        #unlockedImage img {
+            width: 50%;
+            height: auto;
+        }
+
+        #outputBox {
+            display: flex;
+            justify-content: center;
+            width: 480px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gesture-Based Password Unlock</h1>
+    <div id="videoContainer">
+        <video id="webcam" autoplay playsinline width="640" height="480"></video>
+        <canvas class="output_canvas" id="output_canvas" width="640" height="480"></canvas>
+    </div>
+    <div id="outputBox">
+        <div>
+            <button id="webcamButton">ENABLE PREDICTIONS</button>
+        </div>
+        <div id="gesture_output"></div>
+    </div>
+    <div id="protectedContent">
+        <!-- <h2>Protected Content</h2>
+        <p>This content is unlocked by a specific sequence of gestures.</p> -->
+    </div>
+    <div id="unlockedImage">
+        <img src="img.png" alt="Unlocked Image" />
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
